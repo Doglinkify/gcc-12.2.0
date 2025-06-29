@@ -2232,7 +2232,7 @@ __gcc_bcmp (const unsigned char *s1, const unsigned char *s2, size_t size)
    We no longer provide that header, but this routine remains in libgcc.a
    for binary backward compatibility.  Note that it is not included in
    the shared version of libgcc.  */
-#ifdef L_eprintf
+#if 0
 #ifndef inhibit_libc
 
 #undef NULL /* Avoid errors if stdio.h and our stddef.h mismatch.  */
