@@ -67,3 +67,4 @@ stamp-*
 /mpc*
 /gmp*
 /isl*
+build

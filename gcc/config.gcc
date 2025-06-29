@@ -750,6 +750,13 @@ case ${target} in
     "" | yes | posix) thread_file='posix' ;;
   esac
   ;;
+*-*-dlos*)
+  extra_options="$extra_options gnu-user.opt"
+  gas=yes
+  gnu_ld=yes
+  default_use_cxa_atexit=no
+  use_gcc_stdint=provide
+  ;;
 *-*-dragonfly*)
   gas=yes
   gnu_ld=yes
@@ -1900,6 +1907,9 @@ i[34567]86-*-elf*)
 	;;
 x86_64-*-elf*)
 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h"
+	;;
+x86_64-*-dlos*)
+	tm_file="${tm_file} i386/unix.h i386/att.h elfos.h glibc-stdint.h i386/i386elf.h i386/x86-64.h dlos.h"
 	;;
 x86_64-*-rtems*)
 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h i386/rtemself.h rtems.h"
